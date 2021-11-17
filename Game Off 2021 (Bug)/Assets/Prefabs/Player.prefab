@@ -47,9 +47,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: Player
   unitLevel: 999
-  damage: 10
+  damage: 3
   maxHP: 60
   currentHP: 60
+  speed: 0
 --- !u!1 &9152230502697080587
 GameObject:
   m_ObjectHideFlags: 0

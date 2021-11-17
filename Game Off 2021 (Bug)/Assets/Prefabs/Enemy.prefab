@@ -131,6 +131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: Skully
   unitLevel: 1
-  damage: 2
-  maxHP: 5
-  currentHP: 5
+  damage: 3
+  maxHP: 20
+  currentHP: 20
+  speed: 0

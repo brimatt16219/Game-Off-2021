@@ -16,4 +16,14 @@ public class Unit : MonoBehaviour
 
     public int speed;
 
+
+    public bool TakeDamage(int dmg)
+    {
+        currentHP -= dmg;
+
+        if (currentHP <= 0)
+            return true;
+        else
+            return false;
+    }
 }
