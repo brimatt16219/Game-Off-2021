@@ -8,12 +8,19 @@ public class Player : MonoBehaviour
 
     private Rigidbody2D rb;
 
+    public int health;
+    public int maxHealth = 20;
+
     private Vector3 change;
+
+    public HealthBar healthBar;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        health = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
     }
 
     // Update is called once per frame
@@ -29,5 +36,12 @@ public class Player : MonoBehaviour
     void Move()
     {
         rb.MovePosition(transform.position + change.normalized * speed * Time.deltaTime);
+        
+    }
+    
+    void TakeDamage(int damage)
+    {
+        health -= damage;
+        healthBar.SetHealth(health);
     }
 }
