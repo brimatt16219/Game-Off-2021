@@ -38,6 +38,11 @@ public class Player : MonoBehaviour
         rb.MovePosition(transform.position + change.normalized * speed * Time.deltaTime);
         
     }
+
+    void UpdateHealth()
+    {
+        
+    }
     
     void TakeDamage(int damage)
     {
