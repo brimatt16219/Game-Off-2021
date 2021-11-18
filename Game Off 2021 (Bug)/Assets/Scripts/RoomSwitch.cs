@@ -9,22 +9,20 @@ public class RoomSwitch : MonoBehaviour
     public Transform a;
     public Transform b;
 
-    bool AtA = false;
+    public bool isA = false;
     bool playerInRange = false;
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (playerInRange && AtA)
+            if (playerInRange && isA)
             {
                 player.position = b.position;
-                AtA = false;
             }
             else if (playerInRange)
             {
                 player.position = a.position;
-                AtA = true;
             }
         }
         
