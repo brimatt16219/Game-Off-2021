@@ -47,6 +47,7 @@ public class Dialogue : MonoBehaviour
          if (other.CompareTag("Player"))
          {
              playerInRange = false;
+             dialogueBox.SetActive(false);
          }
     }
 }
