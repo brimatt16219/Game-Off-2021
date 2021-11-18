@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Interactable
   layers:
   - Default
   - TransparentFX
@@ -41,6 +42,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Tiles
+    uniqueID: 2300065531
+    locked: 0
   - name: Health
     uniqueID: 3066846705
+    locked: 0
+  - name: Player
+    uniqueID: 296686369
     locked: 0

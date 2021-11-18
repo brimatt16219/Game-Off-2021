@@ -2,8 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum Interacting { INTERACTING, NOTINTERACTING }
+
 public class Player : MonoBehaviour
 {
+    public Interacting interact;
+
     public float speed;
 
     private Rigidbody2D rb;
@@ -13,14 +17,14 @@ public class Player : MonoBehaviour
 
     private Vector3 change;
 
-    public HealthBar healthBar;
+    //public HealthBar healthBar;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         health = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
+        //healthBar.SetMaxHealth(maxHealth);
     }
 
     // Update is called once per frame
@@ -30,7 +34,8 @@ public class Player : MonoBehaviour
         change.x = Input.GetAxisRaw("Horizontal");
         change.y = Input.GetAxisRaw("Vertical");
 
-        Move();
+        if (interact == Interacting.NOTINTERACTING)
+            Move();
     }
 
     void Move()
@@ -47,6 +52,14 @@ public class Player : MonoBehaviour
     void TakeDamage(int damage)
     {
         health -= damage;
-        healthBar.SetHealth(health);
+        //healthBar.SetHealth(health);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Interactable"))
+        {
+            //interact = Interacting.INTERACTING;
+        }
     }
 }
